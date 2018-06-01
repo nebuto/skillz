@@ -22,6 +22,7 @@ def intent_received(hermes, intent_message):
         sentence += 'the weather '
     else:
         hermes.publish_end_session(intent_message.session_id, None)
+        return
 
     forecast_country_slot = intent_message.slots.forecast_country
     forecast_locality_slot = intent_message.slots.forecast_locality
